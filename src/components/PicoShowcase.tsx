@@ -63,7 +63,7 @@ export function PicoShowcase() {
         <div className="overflow-hidden mx-8 md:mx-14">
           <div
             className="flex gap-5 transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${offset * (200 + 20)}px)` }}
+            style={{ transform: `translateX(-${offset * (240 + 20)}px)` }}
           >
             {videos.map((video, idx) => (
               <motion.article
@@ -72,7 +72,7 @@ export function PicoShowcase() {
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="shrink-0 w-[200px] rounded-2xl overflow-hidden group relative bg-[#0a0a0a] ring-1 ring-white/10 hover:ring-white/20 transition-all"
+                className="shrink-0 w-[220px] md:w-[240px] rounded-2xl overflow-hidden group relative bg-[#0a0a0a] ring-1 ring-white/10 hover:ring-white/20 transition-all"
               >
                 {/* Video — 9:16 phone format */}
                 <div className="aspect-[9/16] overflow-hidden bg-[#0a0a0a] relative">

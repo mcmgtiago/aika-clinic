@@ -19,12 +19,12 @@ export function Hero() {
 
   return (
     <>
-      {/* UnicornStudio — FULL PAGE fixed background */}
+      {/* UnicornStudio — Full page fixed (interactive mouse movement) */}
       <div
         className="fixed top-0 left-0 w-full h-screen -z-10"
         style={{
-          maskImage: 'linear-gradient(180deg, black 0%, black 70%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(180deg, black 0%, black 70%, transparent 100%)',
+          maskImage: 'linear-gradient(180deg, black 0%, black 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(180deg, black 0%, black 60%, transparent 100%)',
         }}
       >
         <div

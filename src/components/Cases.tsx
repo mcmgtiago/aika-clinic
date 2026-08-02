@@ -52,12 +52,16 @@ const cases = [
   },
 ]
 
-function FlipCard({ item }: { item: typeof cases[0] }) {
+function FlipCard({ item, idx }: { item: typeof cases[0]; idx: number }) {
   const [flipped, setFlipped] = useState(false)
 
   return (
-    <div
-      className="shrink-0 w-[320px] md:w-[380px] h-[480px] cursor-pointer [perspective:1200px]"
+    <motion.div
+      initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      transition={{ duration: 0.6, delay: idx * 0.1 }}
+      viewport={{ once: true }}
+      className="h-[420px] cursor-pointer [perspective:1200px]"
       onClick={() => setFlipped(!flipped)}
     >
       <div
@@ -67,29 +71,19 @@ function FlipCard({ item }: { item: typeof cases[0] }) {
       >
         {/* FRONT */}
         <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-[#0a0a0a]">
-          {/* City badge */}
           <div className="absolute top-4 left-4 z-10">
             <span className="text-[10px] font-mono text-white/80 bg-white/10 backdrop-blur ring-1 ring-white/20 rounded-full px-3 py-1">
               {item.city}
             </span>
           </div>
-          {/* Image */}
-          <img
-            src={item.img}
-            alt={item.name}
-            className="w-full h-3/4 object-cover object-top grayscale hover:grayscale-[50%] transition-all duration-500"
-          />
-          {/* Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent" />
-          {/* Info */}
+          <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover object-top grayscale" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
             <div>
               <h3 className="text-white font-semibold text-lg font-display">{item.name}</h3>
               <p className="text-[#94a3b8] text-sm mt-1">{item.desc}</p>
             </div>
-            <span className="font-mono text-2xl font-bold" style={{ color: 'oklch(0.735 0.129 83)' }}>
-              {item.value}
-            </span>
+            <span className="font-mono text-2xl font-bold" style={{ color: 'oklch(0.735 0.129 83)' }}>{item.value}</span>
           </div>
         </div>
 
@@ -100,7 +94,6 @@ function FlipCard({ item }: { item: typeof cases[0] }) {
               <h3 className="text-white font-semibold text-xl font-display">{item.name}</h3>
               <span className="font-mono text-xl font-bold" style={{ color: 'oklch(0.735 0.129 83)' }}>{item.value}</span>
             </div>
-
             <div className="space-y-5">
               <div>
                 <p className="text-[10px] font-mono text-white/50 uppercase tracking-widest mb-1">Estratégia</p>
@@ -116,57 +109,40 @@ function FlipCard({ item }: { item: typeof cases[0] }) {
               </div>
             </div>
           </div>
-
           <p className="text-[10px] text-white/30 text-center font-mono">Toque para voltar</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 export function Cases() {
   return (
-    <section id="cases" className="relative z-10 py-32 border-t border-white/5">
+    <section id="cases" className="relative z-10 max-w-[1300px] mx-auto px-6 py-32 border-t border-white/5">
       {/* Header */}
-      <div className="max-w-[1300px] mx-auto px-6 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="inline-flex items-center gap-2 uppercase text-xs font-medium text-white/60 tracking-widest font-mono mb-4">
-            <span className="w-1.5 h-1.5 animate-pulse rounded-full shadow-[0_0_8px_rgba(180,130,50,0.8)]" style={{ backgroundColor: 'oklch(0.735 0.129 83)' }} />
-            Resultados reais
-          </p>
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-white leading-[1.1] font-display">
-            Antes e depois,{' '}
-            <span className="text-[#64748b]">em reais.</span>
-          </h2>
-          <p className="text-[#94a3b8] mt-4 text-sm">Toque no card para ver detalhes da estratégia.</p>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="mb-12"
+      >
+        <p className="inline-flex items-center gap-2 uppercase text-xs font-medium text-white/60 tracking-widest font-mono mb-4">
+          <span className="w-1.5 h-1.5 animate-pulse rounded-full shadow-[0_0_8px_rgba(180,130,50,0.8)]" style={{ backgroundColor: 'oklch(0.735 0.129 83)' }} />
+          Resultados reais
+        </p>
+        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-white leading-[1.1] font-display">
+          Antes e depois,{' '}
+          <span className="text-[#64748b]">em reais.</span>
+        </h2>
+        <p className="text-[#94a3b8] mt-4 text-sm">Toque no card para ver detalhes da estratégia.</p>
+      </motion.div>
 
-      {/* Horizontal scroll */}
-      <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
-
-        <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 px-[max(24px,calc((100vw-1300px)/2))] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {cases.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="snap-start"
-            >
-              <FlipCard item={item} />
-            </motion.div>
-          ))}
-        </div>
+      {/* Grid 2x2 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cases.map((item, idx) => (
+          <FlipCard key={idx} item={item} idx={idx} />
+        ))}
       </div>
     </section>
   )

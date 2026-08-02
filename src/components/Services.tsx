@@ -43,6 +43,27 @@ const services = [
 export function Services() {
   return (
     <section id="servicos" className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mb-16"
+      >
+        <p className="inline-flex items-center gap-2 uppercase text-xs font-medium text-white/60 tracking-widest font-mono mb-4">
+          <span className="w-1.5 h-1.5 animate-pulse rounded-full shadow-[0_0_8px_rgba(180,130,50,0.8)]" style={{ backgroundColor: 'oklch(0.735 0.129 83)' }} />
+          Como atuamos
+        </p>
+        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-white leading-[1.1] font-display">
+          Caixa rápido,{' '}
+          <span className="text-[#64748b]">base sólida.</span>
+        </h2>
+        <p className="text-[#94a3b8] mt-4 text-base leading-relaxed max-w-2xl">
+          O Pico abre a parceria. As outras frentes transformam o resultado pontual em rotina previsível.
+        </p>
+      </motion.div>
+
       {/* Bento Grid 3x2 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((service, idx) => (
