@@ -70,7 +70,7 @@ export function Header({ onCtaClick }: { onCtaClick?: () => void }) {
             <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="text-lg text-neutral-200 hover:text-white font-display font-medium py-2">A AIKA</a>
             <a href="#cases" onClick={() => setIsMenuOpen(false)} className="text-lg text-neutral-200 hover:text-white font-display font-medium py-2">Resultados</a>
             <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="text-lg text-neutral-200 hover:text-white font-display font-medium py-2">Serviços</a>
-            <a href="#contato" onClick={() => setIsMenuOpen(false)} className="mt-2 text-center font-semibold bg-gradient-to-r from-[#FFEBB1] to-[#FFC438] rounded-full py-3 px-6 text-amber-900">Quero previsibilidade</a>
+            <button onClick={() => { setIsMenuOpen(false); onCtaClick?.() }} className="mt-2 text-center font-semibold bg-gradient-to-r from-[#FFEBB1] to-[#FFC438] rounded-full py-3 px-6 text-amber-900 w-full">Quero previsibilidade</button>
           </nav>
         </div>
       )}
