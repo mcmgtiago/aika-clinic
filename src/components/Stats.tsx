@@ -63,7 +63,7 @@ export function Stats() {
   ]
 
   return (
-    <section className="py-16 relative z-10 max-w-[1300px] mx-auto px-6">
+    <section className="py-8 md:py-12 lg:py-16 relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {stats.map((stat) => (
           <StatItem key={stat.label} value={stat.value} label={stat.label} />

@@ -3,7 +3,7 @@ import { Send } from 'lucide-react'
 
 export function CashSection() {
   return (
-    <section className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+    <section className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

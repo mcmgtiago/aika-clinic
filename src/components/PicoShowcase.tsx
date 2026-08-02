@@ -20,7 +20,7 @@ export function PicoShowcase() {
   const next = () => setOffset((o) => Math.min(maxOffset, o + 1))
 
   return (
-    <section className="py-32 border-t border-white/5 relative z-10">
+    <section className="py-12 md:py-20 lg:py-32 bg-[#080808] border-y border-white/5 relative z-10">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}

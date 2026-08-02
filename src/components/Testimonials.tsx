@@ -9,7 +9,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative z-10 max-w-[1300px] mx-auto px-6 py-32 border-t border-white/5">
+    <section className="relative z-10 py-12 md:py-20 lg:py-32 bg-[#080808] border-y border-white/5">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -63,6 +64,7 @@ export function Testimonials() {
             </div>
           </motion.article>
         ))}
+      </div>
       </div>
     </section>
   )

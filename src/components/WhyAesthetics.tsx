@@ -26,9 +26,9 @@ const reasons = [
 
 export function WhyAesthetics() {
   return (
-    <section className="relative z-10 max-w-[1300px] mx-auto px-6 py-32 border-t border-white/5">
+    <section className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32 border-t border-white/5">
       {/* Header */}
-      <div className="max-w-4xl mb-24">
+      <div className="max-w-4xl mb-10 md:mb-16 lg:mb-24">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

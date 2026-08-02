@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Background } from './components/Background'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
-import { LogoBar } from './components/LogoBar'
 import { Stats } from './components/Stats'
 import { CashSection } from './components/CashSection'
 import { Services } from './components/Services'
@@ -29,7 +28,6 @@ export default function App() {
       <Header onCtaClick={() => setModalOpen(true)} />
       <main id="conteudo" className="relative z-10">
         <Hero />
-        <LogoBar />
         <Stats />
         <CashSection />
         <Services />
@@ -47,7 +45,6 @@ export default function App() {
       <Footer />
       <ChatWidget />
       <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-      {/* Fixed bottom blur */}
       <div className="bottom-blur" />
     </>
   )

@@ -42,7 +42,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+    <section id="servicos" className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
