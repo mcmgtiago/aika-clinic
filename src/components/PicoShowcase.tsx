@@ -3,12 +3,12 @@ import { motion } from 'motion/react'
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const videos = [
-  { name: 'Rubia', src: '/assets/pico-rubia.mp4', value: 'R$134k', city: 'PR' },
-  { name: 'Laila', src: '/assets/pico-laila.mp4', value: 'R$36k', city: 'ES' },
-  { name: 'Kamila', src: '/assets/pico-kamila.mp4', value: 'R$17k', city: 'RS' },
-  { name: 'Royal Face', src: '/assets/pico-royal-face.mp4', value: 'R$34k', city: 'PR' },
-  { name: 'Botoclinic', src: '/assets/pico-botoclinic.mp4', value: 'R$53k', city: 'MG' },
-  { name: 'Maykon', src: '/assets/pico-maykon.mp4', value: 'R$58k', city: 'PR' },
+  { name: 'Rubia', src: '/assets/pico-rubia.webm', value: 'R$134k', city: 'PR' },
+  { name: 'Laila', src: '/assets/pico-laila.webm', value: 'R$36k', city: 'ES' },
+  { name: 'Kamila', src: '/assets/pico-kamila.webm', value: 'R$17k', city: 'RS' },
+  { name: 'Royal Face', src: '/assets/pico-royal-face.webm', value: 'R$34k', city: 'PR' },
+  { name: 'Botoclinic', src: '/assets/pico-botoclinic.webm', value: 'R$53k', city: 'MG' },
+  { name: 'Maykon', src: '/assets/pico-maykon.webm', value: 'R$58k', city: 'PR' },
 ]
 
 export function PicoShowcase() {

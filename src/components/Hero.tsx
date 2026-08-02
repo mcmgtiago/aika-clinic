@@ -6,9 +6,9 @@ import { ContactModal } from './ContactModal'
 const UNICORN_PROJECT_ID = '4OF29NF3HVBYQsrwPvVq'
 
 const bgVideos = [
-  '/assets/bg-video-1.mp4',
-  '/assets/bg-video-2.mp4',
-  '/assets/bg-video-3.mp4',
+  '/assets/bg-video-1.webm',
+  '/assets/bg-video-2.webm',
+  '/assets/bg-video-3.webm',
 ]
 
 export function Hero() {
