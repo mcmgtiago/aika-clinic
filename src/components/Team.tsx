@@ -1,9 +1,9 @@
 import { motion } from 'motion/react'
 
 const members = [
-  { name: 'Fernanda', photo: '/assets/team-fernanda.png', role: 'Estratégia e Growth' },
-  { name: 'Gabi', photo: '/assets/team-gabi.jpeg', role: 'Design e Branding' },
-  { name: 'Rayanne', photo: '/assets/team-rayanne.jpeg', role: 'Tráfego e Performance' },
+  { name: 'Fernanda', photo: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Fernanda', role: 'Estratégia e Growth' },
+  { name: 'Gabi', photo: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Gabi', role: 'Design e Branding' },
+  { name: 'Rayanne', photo: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rayanne', role: 'Tráfego e Performance' },
 ]
 
 export function Team() {

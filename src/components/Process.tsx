@@ -50,7 +50,7 @@ export function Process() {
             >
               {/* Card */}
               <div className={`md:w-1/2 flex ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                <div className="relative w-full max-w-sm p-8 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)] hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent)] transition-all duration-500 shadow-lg shadow-black/50"
+                <div className="relative w-full max-w-md p-10 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)] hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent)] transition-all duration-500 shadow-lg shadow-black/50"
                   style={{ position: 'relative' }}
                 >
                   {/* Border gradient */}

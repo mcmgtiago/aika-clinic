@@ -76,7 +76,7 @@ export function Hero() {
         <div className="absolute bottom-0 left-0 w-full h-72 -z-[5] bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
 
         {/* Content */}
-        <div className="max-w-5xl mx-auto px-6 md:pt-16 md:pb-28 pt-10 pb-10">
+        <div className="max-w-5xl mx-auto px-6 md:pt-32 md:pb-44 pt-16 pb-20">
           {/* Pill badge */}
           <motion.div
             initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}

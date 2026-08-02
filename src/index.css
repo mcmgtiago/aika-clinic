@@ -229,9 +229,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
-/* Gradient white->gray for main headings only */
+/* Gradient white->gray for headings */
+h1, h2 {
+  color: #ffffff;
+}
+h1 .text-gradient, h2 .text-gradient,
 .heading-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #b0b8c4 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
