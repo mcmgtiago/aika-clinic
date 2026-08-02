@@ -76,7 +76,7 @@ function FlipCard({ item, idx }: { item: typeof cases[0]; idx: number }) {
               {item.city}
             </span>
           </div>
-          <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover object-top grayscale" />
+          <img src={item.img} alt={item.name} className="w-full h-3/4 object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
             <div>
