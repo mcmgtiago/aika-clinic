@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Background } from './components/Background'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
@@ -17,12 +18,15 @@ import { CommissionModel } from './components/CommissionModel'
 import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
 import { ChatWidget } from './components/ChatWidget'
+import { ContactModal } from './components/ContactModal'
 
 export default function App() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <>
       <Background />
-      <Header />
+      <Header onCtaClick={() => setModalOpen(true)} />
       <main id="conteudo" className="relative z-10">
         <Hero />
         <LogoBar />
@@ -42,6 +46,7 @@ export default function App() {
       </main>
       <Footer />
       <ChatWidget />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       {/* Fixed bottom blur */}
       <div className="bottom-blur" />
     </>

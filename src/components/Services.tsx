@@ -75,18 +75,18 @@ export function Services() {
             viewport={{ once: true }}
             className="group relative flex flex-col rounded-2xl overflow-hidden bg-[#0c0c0c] ring-1 ring-white/10 hover:ring-white/20 transition-all duration-500 hover:-translate-y-1"
           >
-            {/* Image area */}
-            <div className="relative h-52 overflow-hidden">
+            {/* Image area — bigger */}
+            <div className="relative h-64 overflow-hidden">
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-[1.05] transition-all duration-700"
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0c0c0c]/30 to-[#0c0c0c]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0c0c0c]" />
             </div>
 
             {/* Content — title + description at bottom */}
-            <div className="p-6 -mt-4 relative z-10">
+            <div className="p-7 -mt-4 relative z-10">
               <h3 className="text-lg font-semibold text-white mb-2 font-display tracking-tight">
                 {service.title}
                 {service.badge && (

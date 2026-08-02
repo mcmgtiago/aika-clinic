@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
-export function Header() {
+export function Header({ onCtaClick }: { onCtaClick?: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -44,14 +44,14 @@ export function Header() {
           <a href="#contato" className="hover:text-white transition-colors duration-200">Contato</a>
         </nav>
 
-        {/* CTA */}
-        <a
-          href="#contato"
-          className="hidden md:flex group transition-all duration-300 overflow-hidden font-semibold bg-gradient-to-r from-[#FFEBB1] to-[#FFC438] rounded-full py-2.5 px-6 relative shadow-[0_8px_20px_-6px_rgba(255,162,42,0.6),inset_0_2px_3px_rgb(252,220,134),inset_0_-2px_3px_rgb(255,162,38)] text-amber-900 hover:shadow-[0_12px_28px_-6px_rgba(255,162,42,0.8)] hover:scale-[1.02] active:scale-95 text-sm items-center gap-2"
+        {/* CTA — opens modal */}
+        <button
+          onClick={onCtaClick}
+          className="hidden md:flex group transition-all duration-300 overflow-hidden font-semibold bg-gradient-to-r from-[#FFEBB1] to-[#FFC438] rounded-full py-2.5 px-6 relative shadow-[0_8px_20px_-6px_rgba(255,162,42,0.6),inset_0_2px_3px_rgb(252,220,134),inset_0_-2px_3px_rgb(255,162,38)] text-amber-900 hover:shadow-[0_12px_28px_-6px_rgba(255,162,42,0.8)] hover:scale-[1.02] active:scale-95 text-sm items-center gap-2 cursor-pointer"
         >
           <div className="group-hover:translate-y-0 transition-transform duration-300 bg-white/20 absolute inset-0 translate-y-full" />
           <span className="relative">Quero previsibilidade</span>
-        </a>
+        </button>
 
         {/* Mobile Toggle */}
         <button

@@ -227,18 +227,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.025em;
-  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+}
+
+/* Gradient white->gray for main headings only */
+.heading-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #b0b8c4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Override for headings with explicit color */
-h1 span, h2 span, h3 span {
-  -webkit-text-fill-color: inherit;
-  background: none;
-  -webkit-background-clip: unset;
-  background-clip: unset;
 }
 
 p, span, a, li, label, input, select, textarea, button {

@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import { Send, ArrowRight } from 'lucide-react'
+import { ContactModal } from './ContactModal'
 
-// Unicorn project — cruz/glow (hero only)
-const UNICORN_HERO_ID = '4OF29NF3HVBYQsrwPvVq'
-// Unicorn project — mouse interactive (full page)
-// Use same ID or a different one if you have a mouse-only effect
-const UNICORN_MOUSE_ID = '4OF29NF3HVBYQsrwPvVq'
+const UNICORN_PROJECT_ID = '4OF29NF3HVBYQsrwPvVq'
 
-const bgVideos = ['/assets/bg-video-1.mp4', '/assets/bg-video-2.mp4', '/assets/bg-video-3.mp4']
+const bgVideos = [
+  '/assets/bg-video-1.mp4',
+  '/assets/bg-video-2.mp4',
+  '/assets/bg-video-3.mp4',
+]
 
 export function Hero() {
   const [currentVideo, setCurrentVideo] = useState(0)
-
-  // Rotate videos every 8s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideo((v) => (v + 1) % bgVideos.length)
-    }, 8000)
-    return () => clearInterval(interval)
-  }, [])
+  const [modalOpen, setModalOpen] = useState(false)
 
   // Re-init UnicornStudio after React renders
   useEffect(() => {
@@ -32,24 +26,19 @@ export function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Rotate videos every 8 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideo((v) => (v + 1) % bgVideos.length)
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
-      {/* UnicornStudio — Mouse interactive effect (FULL PAGE FIXED) */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10 pointer-events-none">
-        <div
-          data-us-project={UNICORN_MOUSE_ID}
-          data-us-scale="1"
-          data-us-dpi="1"
-          data-us-lazyload="false"
-          data-us-fixed="true"
-          className="absolute w-full h-full left-0 top-0 pointer-events-auto"
-        />
-      </div>
-
-      {/* Hero Section */}
-      <section id="inicio" className="relative pt-24 overflow-hidden">
-        {/* Background videos (alternating, blurred, low opacity) */}
-        <div className="absolute inset-0 -z-5">
+      <section id="inicio" className="relative pt-24">
+        {/* Layer 1: Background videos (lowest, with blur + low opacity) */}
+        <div className="absolute inset-0 -z-20 overflow-hidden">
           {bgVideos.map((src, idx) => (
             <video
               key={src}
@@ -58,36 +47,36 @@ export function Hero() {
               muted
               loop
               playsInline
-              className={`absolute inset-0 w-full h-full object-cover blur-[2px] transition-opacity duration-[2000ms] ${
-                idx === currentVideo ? 'opacity-[0.12]' : 'opacity-0'
+              className={`absolute inset-0 w-full h-full object-cover blur-sm transition-opacity duration-[2000ms] ${
+                idx === currentVideo ? 'opacity-20' : 'opacity-0'
               }`}
             />
           ))}
-          {/* Dark overlay on videos */}
-          <div className="absolute inset-0 bg-[#050505]/70" />
-          <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-[#050505] to-transparent" />
         </div>
 
-        {/* UnicornStudio — Cruz/glow effect (HERO ONLY) */}
+        {/* Layer 2: UnicornStudio cross effect (on top of videos) */}
         <div
-          className="absolute top-0 left-0 w-full h-[1100px] -z-5"
+          className="absolute inset-0 -z-10 h-[1100px]"
           style={{
-            maskImage: 'linear-gradient(180deg, transparent 0%, black 5%, black 75%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 5%, black 75%, transparent 100%)',
+            maskImage: 'linear-gradient(180deg, transparent, black 0%, black 80%, transparent)',
+            WebkitMaskImage: 'linear-gradient(180deg, transparent, black 0%, black 80%, transparent)',
           }}
         >
           <div
-            data-us-project={UNICORN_HERO_ID}
+            data-us-project={UNICORN_PROJECT_ID}
             data-us-scale="1"
             data-us-dpi="1.5"
             data-us-lazyload="false"
             className="absolute w-full h-full left-0 top-0"
           />
-          <div className="absolute inset-0 bg-[#050505]/20" />
         </div>
 
+        {/* Dark overlays for readability */}
+        <div className="absolute inset-0 -z-[5] bg-[#050505]/40" />
+        <div className="absolute bottom-0 left-0 w-full h-72 -z-[5] bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
+
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 md:pt-16 md:pb-28 pt-10 pb-10">
+        <div className="max-w-5xl mx-auto px-6 md:pt-16 md:pb-28 pt-10 pb-10">
           {/* Pill badge */}
           <motion.div
             initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
@@ -128,9 +117,9 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col gap-3 sm:flex-row mt-8 items-center justify-center"
             >
-              {/* Primary CTA — Gold premium */}
-              <a
-                href="#contato"
+              {/* Primary CTA — opens modal */}
+              <button
+                onClick={() => setModalOpen(true)}
                 className="group transition-all duration-300 overflow-hidden font-medium bg-gradient-to-r from-[#FFEBB1] to-[#FFC438] rounded-full py-4 px-8 relative shadow-[0_15px_33px_-12px_rgba(255,162,42,0.9),inset_0_4px_6.3px_rgb(252,220,134),inset_0_-5px_6.3px_rgb(255,162,38)] text-amber-900 hover:shadow-[0_20px_40px_-10px_rgba(255,162,42,1)] hover:scale-[1.02] active:scale-95"
               >
                 <div className="group-hover:translate-y-0 transition-transform duration-300 bg-white/20 absolute inset-0 translate-y-full" />
@@ -138,7 +127,7 @@ export function Hero() {
                   Quero previsibilidade
                   <Send size={16} />
                 </span>
-              </a>
+              </button>
 
               {/* Secondary CTA */}
               <a
@@ -154,7 +143,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="text-[11px] text-white/30 mt-4 font-mono"
             >
               Diagnóstico gratuito · Sem compromisso · Resultado em 24h
@@ -162,6 +151,9 @@ export function Hero() {
           </div>
         </div>
       </section>
+
+      {/* Contact Modal */}
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   )
 }
