@@ -78,17 +78,17 @@ export function Services() {
             className="group relative flex flex-col rounded-2xl overflow-hidden bg-[#0c0c0c] ring-1 ring-white/10 hover:ring-white/20 transition-all duration-500 hover:-translate-y-1"
           >
             {/* Image area — bigger */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-52 sm:h-64 md:h-72 overflow-hidden">
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0c0c0c]" />
             </div>
 
             {/* Content — title + description at bottom */}
-            <div className="p-7 -mt-4 relative z-10">
+            <div className="p-5 sm:p-7 -mt-4 relative z-10">
               <h3 className="text-lg font-semibold text-white mb-2 font-display tracking-tight">
                 {service.title}
                 {service.badge && (

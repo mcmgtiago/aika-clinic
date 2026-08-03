@@ -9,12 +9,14 @@ import { PicoFeature } from './components/PicoFeature'
 import { PicoShowcase } from './components/PicoShowcase'
 import { Cases } from './components/Cases'
 import { Process } from './components/Process'
+import { Identification } from './components/Identification'
 import { Manifesto } from './components/Manifesto'
 import { Team } from './components/Team'
 import { Testimonials } from './components/Testimonials'
 import { WhyAesthetics } from './components/WhyAesthetics'
 import { CommissionModel } from './components/CommissionModel'
 import { FAQ } from './components/FAQ'
+import { LastCall } from './components/LastCall'
 import { Footer } from './components/Footer'
 import { ChatWidget } from './components/ChatWidget'
 import { ContactModal } from './components/ContactModal'
@@ -35,12 +37,14 @@ export default function App() {
         <PicoShowcase />
         <Cases />
         <Process />
+        <Identification />
         <Manifesto />
         <Team />
         <Testimonials />
         <WhyAesthetics />
         <CommissionModel />
         <FAQ />
+        <LastCall onCtaClick={() => setModalOpen(true)} />
       </main>
       <Footer />
       <ChatWidget />
