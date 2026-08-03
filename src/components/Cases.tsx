@@ -118,7 +118,7 @@ function FlipCard({ item, idx }: { item: typeof cases[0]; idx: number }) {
 
 export function Cases() {
   return (
-    <section id="cases" className="relative z-10 max-w-[1300px] mx-auto px-6 py-32 border-t border-white/5">
+    <section id="cases" className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32 border-t border-white/5">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}

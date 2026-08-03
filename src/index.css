@@ -245,16 +245,24 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
-/* Gradient white->gray for headings */
-h1, h2 {
-  color: #ffffff;
-}
-h1 .text-gradient, h2 .text-gradient,
-.heading-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+/* Gradient white→gray for headings (dark sections only) */
+h1, h2, h3 {
+  background: linear-gradient(180deg, #ffffff 0%, #b8c4d0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+/* Reset gradient for light-bg sections */
+[style*="WebkitTextFillColor"] h1,
+[style*="WebkitTextFillColor"] h2,
+[style*="WebkitTextFillColor"] h3,
+h1[style*="WebkitTextFillColor"],
+h2[style*="WebkitTextFillColor"],
+h3[style*="WebkitTextFillColor"] {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 
 p, span, a, li, label, input, select, textarea, button {

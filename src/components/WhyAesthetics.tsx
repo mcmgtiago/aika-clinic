@@ -27,6 +27,8 @@ const reasons = [
 export function WhyAesthetics() {
   return (
     <section className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32 border-t border-white/5">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       {/* Header */}
       <div className="max-w-4xl mb-10 md:mb-16 lg:mb-24">
         <motion.div

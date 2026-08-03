@@ -9,9 +9,9 @@ const facts = [
 
 export function Manifesto() {
   return (
-    <section id="sobre" className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+    <section id="sobre" className="relative z-10 border-t border-white/5 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-24">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-10 md:mb-16 lg:mb-24">
         <motion.h2
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

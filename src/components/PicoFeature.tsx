@@ -3,7 +3,7 @@ import { ArrowRight, Zap } from 'lucide-react'
 
 export function PicoFeature() {
   return (
-    <section className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+    <section className="relative z-10 border-t border-white/5 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -38,7 +38,7 @@ export function PicoFeature() {
           </div>
 
           {/* Right — Copy */}
-          <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10">
+          <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10 border-t border-white/5">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border bg-[rgba(180,130,50,0.08)] w-fit mb-6"
               style={{ borderColor: 'rgba(180,130,50,0.3)' }}

@@ -43,6 +43,8 @@ const services = [
 export function Services() {
   return (
     <section id="servicos" className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}

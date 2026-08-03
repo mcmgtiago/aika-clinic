@@ -23,7 +23,7 @@ export function Footer() {
       </div>
 
       {/* Footer Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-12 max-w-[1300px] mx-auto px-6 gap-x-8 gap-y-12 mb-20">
+      <div className="grid grid-cols-2 md:grid-cols-12 max-w-[1300px] mx-auto px-4 sm:px-6 gap-x-8 gap-y-12 mb-20">
         {/* Logo Column */}
         <div className="col-span-2 md:col-span-4 pr-8">
           <img src="/assets/aika-logo.png" alt="AIKA Clinic" className="h-10 w-auto mb-6" />
@@ -64,7 +64,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-[1300px] mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="text-xs text-[#475569]">
           © 2026 AIKA Clinic. Todos os direitos reservados.
         </div>

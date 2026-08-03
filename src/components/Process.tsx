@@ -8,14 +8,14 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="metodologia" className="py-32 bg-[#050505] relative overflow-hidden border-y border-white/5 z-10">
+    <section id="metodologia" className="py-12 md:py-20 lg:py-32 bg-[#050505] relative overflow-hidden border-y border-white/5 z-10">
       {/* Dot pattern */}
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
 
-      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -46,11 +46,11 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
               viewport={{ once: true }}
-              className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 mb-24 last:mb-0 relative group`}
+              className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 mb-10 md:mb-16 lg:mb-24 last:mb-0 relative group`}
             >
               {/* Card */}
               <div className={`md:w-1/2 flex ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                <div className="relative w-full max-w-md p-10 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)] hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent)] transition-all duration-500 shadow-lg shadow-black/50"
+                <div className="relative w-full max-w-md p-6 md:p-10 rounded-2xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)] hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent)] transition-all duration-500 shadow-lg shadow-black/50"
                   style={{ position: 'relative' }}
                 >
                   {/* Border gradient */}

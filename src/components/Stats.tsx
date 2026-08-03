@@ -64,6 +64,8 @@ export function Stats() {
 
   return (
     <section className="py-8 md:py-12 lg:py-16 relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {stats.map((stat) => (
           <StatItem key={stat.label} value={stat.value} label={stat.label} />

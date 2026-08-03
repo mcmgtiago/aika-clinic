@@ -15,8 +15,8 @@ export function Contact() {
 
   if (submitted) {
     return (
-      <section id="contato" className="py-32 relative z-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section id="contato" className="py-12 md:py-20 lg:py-32 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tighter font-display mb-4">Recebemos seu contato</h2>
             <p className="text-lg text-[#94a3b8]">Nossa equipe vai entrar em contato pelo WhatsApp em breve.</p>
@@ -27,11 +27,11 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" className="py-32 relative overflow-hidden z-10">
+    <section id="contato" className="py-12 md:py-20 lg:py-32 relative overflow-hidden z-10">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[rgba(180,130,50,0.06)] blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}

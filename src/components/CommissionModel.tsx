@@ -11,7 +11,7 @@ const benefits = [
 
 export function CommissionModel() {
   return (
-    <section className="relative z-10 max-w-[1300px] mx-auto px-6 py-32">
+    <section className="relative z-10 border-t border-white/5 max-w-[1300px] mx-auto px-4 sm:px-6 py-12 md:py-20 lg:py-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left — Copy */}
         <motion.div
@@ -42,7 +42,7 @@ export function CommissionModel() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 0.15 }}
           viewport={{ once: true }}
-          className="relative rounded-3xl p-8 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)]"
+          className="relative rounded-3xl p-5 md:p-8 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent)]"
           style={{ position: 'relative' }}
         >
           {/* Border gradient */}
