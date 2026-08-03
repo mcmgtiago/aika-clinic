@@ -9,62 +9,62 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative z-10 py-12 md:py-20 lg:py-32 bg-[#080808] border-y border-white/5">
+    <section className="relative z-10 py-12 md:py-20 lg:py-32 bg-[#f5f5f5]">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-12"
-      >
-        <p className="inline-flex items-center gap-2 uppercase text-xs font-medium text-white/60 tracking-widest font-mono mb-4">
-          <span className="w-1.5 h-1.5 animate-pulse rounded-full shadow-[0_0_8px_rgba(180,130,50,0.8)]" style={{ backgroundColor: 'oklch(0.735 0.129 83)' }} />
-          Depoimentos
-        </p>
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tighter text-white leading-[1.1] font-display">
-          O que dizem <span className="text-[#94a3b8]">nossos clientes.</span>
-        </h2>
-      </motion.div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-10 md:mb-12"
+        >
+          <p className="inline-flex items-center gap-2 uppercase text-xs font-medium text-neutral-500 tracking-widest font-mono mb-4">
+            <span className="w-1.5 h-1.5 animate-pulse rounded-full" style={{ backgroundColor: 'oklch(0.735 0.129 83)' }} />
+            Depoimentos
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tighter text-neutral-900 leading-[1.1] font-display" style={{ background: 'none', WebkitTextFillColor: 'unset', WebkitBackgroundClip: 'unset' }}>
+            O que dizem <span className="text-neutral-400">nossos clientes.</span>
+          </h2>
+        </motion.div>
 
-      {/* Grid 3 colunas fixo */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {testimonials.map((item, idx) => (
-          <motion.article
-            key={idx}
-            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.6, delay: idx * 0.12 }}
-            viewport={{ once: true }}
-            className="relative flex flex-col p-7 rounded-2xl bg-[#0c0c0c] ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300"
-          >
-            {/* Quote icon */}
-            <Quote size={28} className="mb-4 opacity-40" style={{ color: 'oklch(0.735 0.129 83)' }} />
+        {/* Grid 3 colunas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {testimonials.map((item, idx) => (
+            <motion.article
+              key={idx}
+              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, delay: idx * 0.12 }}
+              viewport={{ once: true }}
+              className="relative flex flex-col p-5 md:p-7 rounded-2xl bg-white ring-1 ring-neutral-200 hover:ring-neutral-300 hover:shadow-lg transition-all duration-300"
+            >
+              {/* Quote icon */}
+              <Quote size={24} className="mb-3 opacity-60" style={{ color: 'oklch(0.735 0.129 83)' }} />
 
-            {/* Quote text */}
-            <p className="text-white/90 text-[15px] leading-relaxed flex-1 mb-6">
-              "{item.quote}"
-            </p>
+              {/* Quote text */}
+              <p className="text-neutral-700 text-[14px] sm:text-[15px] leading-relaxed flex-1 mb-5">
+                "{item.quote}"
+              </p>
 
-            {/* Bottom: author + metric */}
-            <div className="pt-5 border-t border-white/8 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: 'rgba(180,130,50,0.15)', color: 'oklch(0.735 0.129 83)' }}>
-                  {item.author[0]}
+              {/* Bottom: author + metric */}
+              <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: 'rgba(180,130,50,0.12)', color: 'oklch(0.55 0.129 83)' }}>
+                    {item.author[0]}
+                  </div>
+                  <div>
+                    <span className="text-sm font-medium text-neutral-900 block">{item.author}</span>
+                    <span className="text-xs text-neutral-500">{item.clinic}</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-sm font-medium text-white block">{item.author}</span>
-                  <span className="text-xs text-[#64748b]">{item.clinic}</span>
+                <div className="font-mono text-lg md:text-xl font-bold" style={{ color: 'oklch(0.55 0.129 83)' }}>
+                  {item.metric}
                 </div>
               </div>
-              <div className="font-mono text-xl font-bold" style={{ color: 'oklch(0.735 0.129 83)' }}>
-                {item.metric}
-              </div>
-            </div>
-          </motion.article>
-        ))}
-      </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   )

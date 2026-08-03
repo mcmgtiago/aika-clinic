@@ -20,7 +20,7 @@ export function PicoShowcase() {
   const next = () => setOffset((o) => Math.min(maxOffset, o + 1))
 
   return (
-    <section className="py-12 md:py-20 lg:py-32 bg-[#080808] border-y border-white/5 relative z-10">
+    <section className="py-12 md:py-20 lg:py-32 bg-[#f5f5f5] relative z-10">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -29,14 +29,14 @@ export function PicoShowcase() {
         viewport={{ once: true }}
         className="max-w-[1300px] mx-auto px-6 mb-12"
       >
-        <span className="font-mono text-xs uppercase tracking-widest font-semibold mb-2 block" style={{ color: 'oklch(0.735 0.129 83)' }}>
+        <span className="font-mono text-xs uppercase tracking-widest font-semibold mb-2 block" style={{ color: 'oklch(0.55 0.129 83)' }}>
           Pico de Faturamento · Resultados
         </span>
-        <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tighter font-display">
+        <h2 className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tighter font-display" style={{ background: 'none', WebkitTextFillColor: 'unset', WebkitBackgroundClip: 'unset' }}>
           Um dia que muda o mês.
         </h2>
-        <p className="text-[#94a3b8] mt-4 flex items-center gap-2">
-          <Play size={14} style={{ color: 'oklch(0.735 0.129 83)' }} />
+        <p className="text-neutral-500 mt-4 flex items-center gap-2">
+          <Play size={14} style={{ color: 'oklch(0.55 0.129 83)' }} />
           Donos de clínica contam o resultado. Toque para ouvir.
         </p>
       </motion.div>
@@ -47,14 +47,14 @@ export function PicoShowcase() {
         <button
           onClick={prev}
           disabled={offset === 0}
-          className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center text-neutral-700 hover:bg-neutral-50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ChevronLeft size={18} />
         </button>
         <button
           onClick={next}
           disabled={offset === maxOffset}
-          className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center text-neutral-700 hover:bg-neutral-50 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ChevronRight size={18} />
         </button>
@@ -72,20 +72,20 @@ export function PicoShowcase() {
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="shrink-0 w-[220px] md:w-[240px] rounded-2xl overflow-hidden group relative bg-[#0a0a0a] ring-1 ring-white/10 hover:ring-white/20 transition-all"
+                className="shrink-0 w-[200px] md:w-[220px] rounded-2xl overflow-hidden group relative bg-white ring-1 ring-neutral-200 hover:ring-neutral-300 hover:shadow-lg transition-all"
               >
                 {/* Video — 9:16 phone format */}
-                <div className="aspect-[9/16] overflow-hidden bg-[#0a0a0a] relative">
+                <div className="aspect-[9/16] overflow-hidden bg-neutral-100 relative">
                   <video src={video.src} controls preload="metadata" playsInline className="w-full h-full object-cover" />
                 </div>
 
                 {/* Meta */}
                 <div className="flex justify-between items-center px-4 py-3">
                   <div>
-                    <span className="text-white text-sm font-medium">{video.name}</span>
-                    <span className="text-[#64748b] text-xs ml-1.5">{video.city}</span>
+                    <span className="text-neutral-900 text-sm font-medium">{video.name}</span>
+                    <span className="text-neutral-400 text-xs ml-1.5">{video.city}</span>
                   </div>
-                  <span className="font-mono text-base font-bold" style={{ color: 'oklch(0.735 0.129 83)' }}>{video.value}</span>
+                  <span className="font-mono text-base font-bold" style={{ color: 'oklch(0.55 0.129 83)' }}>{video.value}</span>
                 </div>
               </motion.article>
             ))}
